@@ -9,11 +9,15 @@ plot_power(
   alpha_level = Superpower_options("alpha_level"),
   min_n = 7,
   max_n = 100,
+  desired_power = 90,
   plot = Superpower_options("plot"),
   emm = Superpower_options("emm"),
   emm_model = Superpower_options("emm_model"),
   contrast_type = Superpower_options("contrast_type"),
-  emm_comp
+  emm_comp,
+  verbose = Superpower_options("verbose"),
+  exact2 = FALSE,
+  liberal_lambda = Superpower_options("liberal_lambda")
 )
 }
 \arguments{
@@ -21,11 +25,13 @@ plot_power(
 
 \item{alpha_level}{Alpha level used to determine statistical significance}
 
-\item{min_n}{Minimum sample size in power curve.}
+\item{min_n}{Minimum sample size in power curve. Cannot be less than or equal to the product of factors. E.g., if design = "2b*2b" then min_n must be at least 5 (2\*2+1=5)}
 
 \item{max_n}{Maximum sample size in power curve.}
 
-\item{plot}{Should power plot be printed automatically (defaults to FALSE)}
+\item{desired_power}{Desired power (e.g., 80, 90). N per group will be highlighted to achieve this desired power in the plot. Defaults to 90.}
+
+\item{plot}{Should power plot be printed automatically (defaults to TRUE)}
 
 \item{emm}{Set to FALSE to not perform analysis of estimated marginal means}
 
@@ -34,6 +40,12 @@ plot_power(
 \item{contrast_type}{Select the type of comparison for the estimated marginal means}
 
 \item{emm_comp}{Set the comparisons for estimated marginal means comparisons. This is a factor name (a), combination of factor names (a+b), or for simple effects a | sign is needed (a|b)}
+
+\item{verbose}{Set to FALSE to not print results (default = TRUE)}
+
+\item{exact2}{Logical indicator for which \code{ANOVA_exact} function (\code{ANOVA_exact} or \code{ANOVA_exact2}) to use in the plots. Default is FALSE which uses \code{ANOVA_exact} which has sample size limitations.}
+
+\item{liberal_lambda}{Logical indictor of whether to use the liberal (cohen_f^2\*(num_df+den_df)) or conservative (cohen_f^2\*den_df) calculation of the noncentrality (lambda) parameter estimate. Default is FALSE.}
 }
 \value{
 Returns plot with power curves for the ANOVA, and a dataframe with the summary data.
@@ -42,6 +54,9 @@ Returns plot with power curves for the ANOVA, and a dataframe with the summary d
   \item{\code{"plot_ANOVA"}}{Plot of power curves from ANOVA results.}
   \item{\code{"plot_MANOVA"}}{Plot of power curves from MANOVA results. Returns NULL if no within-subject factors.}
   \item{\code{"plot_emm"}}{Plot of power curves from MANOVA results. Returns NULL if emm = FALSE.}
+  \item{\code{"anova_n"}}{Achieved Power and Sample Size for ANOVA-level effects.}
+  \item{\code{"manova_n"}}{Achieved Power and Sample Size for MANOVA-level effects.}
+  \item{\code{"emm_n"}}{Achieved Power and Sample Size for estimated marginal means.}
   \item{\code{"power_df"}}{The tabulated ANOVA power results.}
   \item{\code{"power_df_manova"}}{The tabulated MANOVA power results. Returns NULL if no within-subject factors.}
   \item{\code{"power_df_emm"}}{The tabulated Estimated Marginal Means power results. Returns NULL if emm = FALSE.}
@@ -60,6 +75,7 @@ too be added
 }
 
 \examples{
+\dontrun{
 design_result <- ANOVA_design(design = "3b",
                              n = 20,
                              mu = c(0,0,0.3),
@@ -67,5 +83,6 @@ design_result <- ANOVA_design(design = "3b",
                              labelnames = c("condition",
                              "cheerful", "neutral", "sad"))
 
-plot_power(design_result, min_n = 50, max_n = 70)
+plot_power(design_result, min_n = 50, max_n = 70, desired_power = 90)
+}
 }

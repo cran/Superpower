@@ -3,12 +3,25 @@ knitr::opts_chunk$set(echo = TRUE)
 library(Superpower)
 nsims = 100000
 
+## -----------------------------------------------------------------------------
+Superpower_options()
+
+## -----------------------------------------------------------------------------
+Superpower_options("verbose")
+Superpower_options("verbose" = FALSE) 
+Superpower_options("verbose")
+
 ## ---- fig.width=7, fig.height=4, echo=FALSE, message=FALSE, warning=FALSE-----
 design_result <- ANOVA_design(design = "2b*2w*2b",
                               n = 10, 
                               mu = c(1, 2, 3, 4, 5, 6, 7, 8), 
                               sd = 1, 
-                              r = 0.9)
+                              r = 0.9,
+                              plot = FALSE)
+
+design_result
+
+plot(design_result)
 
 
 ## -----------------------------------------------------------------------------
@@ -17,12 +30,17 @@ design_result <- ANOVA_design(design = "2b*2w*2b",
 ## -----------------------------------------------------------------------------
 (((2*2*4)^2)-(2*2*4))/2
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ---- fig.width=5, fig.height=4-----------------------------------------------
 design_result <- ANOVA_design(design = "2w*2w",
                               n = 80,
                               mu = c(1.1, 1.2, 1.3, 1.4),
                               sd = 2,
-                              r <- c(0.91, 0.92, 0.93, 0.94, 0.95, 0.96))
+                              r <- c(0.91, 0.92, 0.93, 0.94, 0.95, 0.96),
+                              plot = FALSE)
+
+design_result
+
+plot(design_result)
 
 ## -----------------------------------------------------------------------------
 design_result$cor_mat
@@ -32,7 +50,7 @@ design_result <- ANOVA_design(design = "2b*2w",
                    n = 40, 
                    mu = c(1.03, 1.41, 0.98, 1.01), 
                    sd = 1.03, 
-                   r=0.8, 
+                   r = 0.8, 
                    labelnames = c("voice", "human", "robot", "emotion", "cheerful", "sad"),
                    plot = TRUE)
 
@@ -71,8 +89,8 @@ library(pwr)
 pwr.t.test(d = 2.2/6.4,
            n = 100,
            sig.level = 0.05,
-           type="two.sample",
-           alternative="two.sided")$power
+           type = "two.sample",
+           alternative = "two.sided")$power
 
 
 ## -----------------------------------------------------------------------------

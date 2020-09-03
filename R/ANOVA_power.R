@@ -26,10 +26,12 @@
 #'   \item{\code{"emm_p_adjust"}}{The p-value adjustment applied to the simulation results for the estimated marginal means.}
 #'   \item{\code{"nsims"}}{The number of simulations run.}
 #'   \item{\code{"alpha_level"}}{The alpha level, significance cut-off, used for the power analysis.}
+#'   \item{\code{"method"}}{Record of the function used to produce the simulation}
 #' 
 #' }
 #' 
 #' @examples
+#' \dontrun{
 #' ## Set up a within design with 2 factors, each with 2 levels,
 #' ## with correlation between observations of 0.8,
 #' ## 40 participants (who do all conditions), and standard deviation of 2
@@ -40,6 +42,7 @@
 #'       "sad", "voice", "human", "robot"))
 #' power_result <- ANOVA_power(design_result, alpha_level = 0.05,
 #'       p_adjust = "none", seed = 2019, nsims = 10)
+#'       }
 #' @section References:
 #' too be added
 #' @importFrom stats pnorm pt qnorm qt as.formula median p.adjust pf sd power
@@ -219,29 +222,7 @@ ANOVA_power <- function(design_result,
                                             adjust = emm_p_adjust)})
     #plot_emm = plot(emm_result, comparisons = TRUE)
     #make comparison based on specs; adjust = "none" in exact; No solution for multcomp in exact simulation
-    pairs_result <- emm_result$contrasts
-    pairs_result_df <- as.data.frame(pairs_result)
-    #Need for exact; not necessary for power function
-    #Convert t-ratio to F-stat
-    pairs_result_df$F.value <- (pairs_result_df$t.ratio)^2
-    #Calculate pes -- The formula for partial eta-squared is equation 13 from Lakens (2013)
-    pairs_result_df$pes <- pairs_result_df$F.value/(pairs_result_df$F.value + pairs_result_df$df) 
-    #Calculate cohen's f
-    pairs_result_df$f2 <- pairs_result_df$pes/(1 - pairs_result_df$pes)
-    #Calculate noncentrality
-    pairs_result_df$lambda <- pairs_result_df$f2*pairs_result_df$df
-    #minusalpha<- 1-alpha_level
-    pairs_result_df$Ft <- qf((1 - alpha_level), 1, pairs_result_df$df)
-    #Calculate power
-    pairs_result_df$power <- (1 - pf(pairs_result_df$Ft, 1, pairs_result_df$df, pairs_result_df$lambda))*100
-    
-    pairs_result_df <- pairs_result_df %>% mutate(partial_eta_squared = .data$pes,
-                                                  cohen_f = sqrt(.data$f2),
-                                                  non_centrality = .data$lambda) %>%
-      select(-.data$p.value,-.data$F.value,-.data$t.ratio,-.data$Ft,-.data$SE,
-             -.data$f2,-.data$lambda,-.data$pes, -.data$estimate, -.data$df) %>%
-      select(-.data$power, -.data$partial_eta_squared, -.data$cohen_f, -.data$non_centrality,
-             .data$power, .data$partial_eta_squared, .data$cohen_f, .data$non_centrality)
+    pairs_result_df <- emmeans_power(emm_result$contrasts, alpha_level = alpha_level)
     
     #rownames from contrasts non readable sticking to row number
     #rownames(pairs_result_df) <- as.character(pairs_result_df$contrast)
@@ -403,7 +384,7 @@ ANOVA_power <- function(design_result,
     
     # Store MANOVA result if there are within subject factors
     if (run_manova == TRUE) {
-      manova_result <- Anova_mlm_table(aov_result$Anova)
+      manova_result <- Anova_mlm_table(aov_result$Anova) # ::: in Shiny
       manova_result$p.value <- p.adjust(manova_result$p.value, method = p_adjust)
     }
     
@@ -412,8 +393,8 @@ ANOVA_power <- function(design_result,
       y <- dataframe$y[which(dataframe$cond == paired_tests[2,j])]
       #this can be sped up by tweaking the functions that are loaded to only give p and dz
       ifelse(within_between[j] == 0,
-             t_test_res <- effect_size_d(x, y, alpha_level = alpha_level),
-             t_test_res <- effect_size_d_paired(x, y, alpha_level = alpha_level))
+             t_test_res <- effect_size_d(x, y, alpha_level = alpha_level), # ::: in Shiny
+             t_test_res <- effect_size_d_paired(x, y, alpha_level = alpha_level)) # ::: in Shiny
       paired_p[j] <- t_test_res$p_value
       paired_d[j] <- ifelse(within_between[j] == 0,
                             t_test_res$d,
@@ -574,7 +555,9 @@ ANOVA_power <- function(design_result,
   }
   
   # Return results in list()
-  invisible(list(sim_data = sim_data,
+  invisible()
+  
+  structure(list(sim_data = sim_data,
                  main_results = main_results,
                  pc_results = pc_results,
                  manova_results = manova_result,
@@ -585,5 +568,7 @@ ANOVA_power <- function(design_result,
                  p_adjust = p_adjust,
                  emm_p_adjust = emm_p_adjust,
                  nsims = nsims,
-                 alpha_level = alpha_level))
+                 alpha_level = alpha_level,
+                 method = "ANOVA_power"),
+            class = "sim_result")
 }

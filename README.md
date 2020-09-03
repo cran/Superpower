@@ -1,11 +1,12 @@
 An Introduction to Superpower
 ================
 
-![Sticker](https://raw.githubusercontent.com/arcaldwell49/Superpower/master/Sticker/Superpower.png)
+![Sticker](https://raw.githubusercontent.com/arcaldwell49/Superpower/master/Sticker/Superpower2.PNG)
 ![authors\_image](https://raw.githubusercontent.com/arcaldwell49/Superpower/master/Sticker/authors.png)
 
 [![Build
 Status](https://travis-ci.com/arcaldwell49/superpower.svg?branch=master)](https://travis-ci.com/arcaldwell49/superpower)
+[![codecov](https://codecov.io/gh/arcaldwell49/Superpower/branch/master/graph/badge.svg)](https://codecov.io/gh/arcaldwell49/Superpower)
 [![](https://img.shields.io/badge/doi-10.31234/osf.io/baxsf-yellow.svg)](https://doi.org/10.31234/osf.io/baxsf)
 
 ## Table of Contents
@@ -21,7 +22,7 @@ The goal of `Superpower` is to easily simulate factorial designs and
 empirically calculate power using a simulation approach. This app is
 intended to be utilized for prospective (a priori) power analysis. In
 addition to this README file we have written a short
-[book](https://arcaldwell49.github.io/SuperpowerBook) documenting the
+[book](https://aaroncaldwell.us/SuperpowerBook/) documenting the
 package’s capabilities.
 
 ## Installation
@@ -105,6 +106,8 @@ level 1 of factor 3.
 The plot below visualizes means from 1 to 8 being entered in a vector:
 mu = c(1, 2, 3, 4, 5, 6, 7, 8) so you can see how the basic ordering
 works.
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
 ### Specifying label names
 
@@ -234,6 +237,8 @@ design_result <- ANOVA_design(design = "2w*2w",
                               r <- c(0.91, 0.92, 0.93, 0.94, 0.95, 0.96))
 ```
 
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
 We can check the correlation matrix by asking for it from the
 design\_result object to check if it was entered the way we wanted:
 
@@ -251,8 +256,7 @@ We should also check the covariance-variance matrix to ensure the
 `ANOVA_design` function working properly. The variance should be the
 diagonal element while the off-diagonal elements should be equal to
 `covariance = correlation*variance` or
-![cov\_{x,y}=\\frac{\\sum\_{i=1}^{N}(x\_{i}-\\bar{x})(y\_{i}-\\bar{y})}{N-1}](https://latex.codecogs.com/png.latex?cov_%7Bx%2Cy%7D%3D%5Cfrac%7B%5Csum_%7Bi%3D1%7D%5E%7BN%7D%28x_%7Bi%7D-%5Cbar%7Bx%7D%29%28y_%7Bi%7D-%5Cbar%7By%7D%29%7D%7BN-1%7D
-"cov_{x,y}=\\frac{\\sum_{i=1}^{N}(x_{i}-\\bar{x})(y_{i}-\\bar{y})}{N-1}").
+\(cov_{x,y}=\frac{\sum_{i=1}^{N}(x_{i}-\bar{x})(y_{i}-\bar{y})}{N-1}\).
 In this case, it is identical to the correlation matrix because the
 variance is equal to 1.
 
@@ -425,8 +429,11 @@ design_result <- ANOVA_design(design = "2b*2w",
                    sd = 1.03, 
                    r = 0.8, 
                    labelnames = c("voice", "human", "robot", "emotion", "cheerful", "sad"))
+```
 
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
+``` r
 power_result_vig_1 <- readRDS(file = "vignettes/sim_data/power_result_vig_1.rds")
 
 power_result_vig_1$main_results
@@ -443,11 +450,11 @@ provides power (from 0 to 100%) and effect sizes (partial eta-squared)
 for the ANOVA result. We see the results for the main effects of factor
 voice, emotion, and the voice\*emotion interaction.
 
-The result for the power simulation reveal power is highest for the main
-effect of emotion. Remember that this is the within-subjects factor, and
-the means are highly correlated (0.8) - so we have high power for within
-comparisons. Power is lower for the interaction, and very low for the
-main effect of voice.
+The result for the power simulation reveals power is highest for the
+main effect of emotion. Remember that this is the within-subjects
+factor, and the means are highly correlated (0.8) - so we have high
+power for within comparisons. Power is lower for the interaction, and
+very low for the main effect of voice.
 
 An ANOVA is typically followed up with contrasts. A statistical
 hypothesis often predicts not just an interaction, but also the shape of
@@ -456,8 +463,7 @@ above, we might be specifically interested in comparing the independent
 effect for the cheerful vs sad human voice assistant, and the difference
 for sad voice when they are robotic or human. The second table provides
 the power for *t*-tests for all comparisons, and the effect sizes
-(Cohen’s d for between-subject contrasts, and Cohen’s
-![d\_z](https://latex.codecogs.com/png.latex?d_z "d_z") for
+(Cohen’s d for between-subject contrasts, and Cohen’s \(d_z\) for
 within-subject contrasts, see
 [Lakens, 2013](https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00863/full)).
 
@@ -469,11 +475,7 @@ the ANOVA\_power function returns the raw simulation data (all
 simulation\_result$sim\_data) and a plot showing the *p*-value
 distributions for all tests in the ANOVA.
 
-``` r
-power_result_vig_1$plot1
-```
-
-![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](vignettes/sim_data/vig_1_plot.png)
 
 ## Example \#2
 
@@ -505,8 +507,11 @@ design_result <- ANOVA_design(design = design,
                               mu = mu, 
                               sd = sd, 
                               labelnames = labelnames)
+```
 
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
+``` r
 power_result_vig_2 <- readRDS(file = "vignettes/sim_data/power_result_vig_2.rds")
 
 #Note we do not specify any correlation in the ANOVA_design function (default r = 0), nor do we specify an alpha in the ANOVA_power function (default is 0.05)
@@ -539,11 +544,10 @@ pwr.t.test(d = 2.2/6.4,
     ## [1] 0.6768572
 
 We can also directly compute Cohen’s f from Cohen’s d for two groups, as
-Cohen (1988) describes, because f =
-![\\frac{1}{2}d](https://latex.codecogs.com/png.latex?%5Cfrac%7B1%7D%7B2%7Dd
-"\\frac{1}{2}d"). So f = 0.5\*0.34375 = 0.171875. And indeed, power
-analysis using the pwr package yields the same result using the
-pwr.anova.test as the power.t.test.
+Cohen (1988) describes, because f = \(\frac{1}{2}d\). So f =
+0.5\*0.34375 = 0.171875. And indeed, power analysis using the pwr
+package yields the same result using the pwr.anova.test as the
+power.t.test.
 
 ``` r
 pwr.anova.test(n = 100,
@@ -588,7 +592,11 @@ design_result <- ANOVA_design(design = "2b",
                    mu = c(24, 26.2), 
                    sd = 6.4, 
                    labelnames = c("condition", "control", "pet"))
+```
 
+![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+``` r
 ANOVA_exact(design_result)$main_results$power
 ```
 
@@ -702,7 +710,11 @@ plot_power(design_result, min_n = 10, max_n = 250,
            plot = TRUE)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+    ## Achieved Power and Sample Size for ANOVA-level effects
+    ##    variable                  label   n achieved_power desired_power
+    ## 1 condition Desired Power Achieved 179          90.03            90
 
 Because the true pattern of means is always unknown, it is sensible to
 examine the power across a range of scenarios. For example, is the
@@ -723,7 +735,11 @@ plot_power(design_result, max_n = 250,
            plot = TRUE)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
+    ## Achieved Power and Sample Size for ANOVA-level effects
+    ##    variable                  label   n achieved_power desired_power
+    ## 1 condition Desired Power Achieved 217          90.11            90
 
 It could be that in addition to a slightly smaller effect size, the
 standard deviation is slightly larger than we expected as well. This
@@ -743,7 +759,11 @@ plot_power(design_result, min_n = 10, max_n = 250,
            plot = TRUE)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+
+    ## Achieved Power and Sample Size for ANOVA-level effects
+    ##    variable                  label   n achieved_power desired_power
+    ## 1 condition Desired Power Achieved 244          90.01            90
 
 As these different plots make clear, your study never really has a known
 statistical power. Because the true effect size (i.e., the pattern of
