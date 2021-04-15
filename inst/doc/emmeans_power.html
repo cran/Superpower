@@ -32,8 +32,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
-<style type="text/css">code{white-space: pre;}</style>
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
 code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -121,6 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 })();
 </script>
+
 
 
 
@@ -318,7 +335,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Power calculations for <code>emmeans</code> analyses</h1>
 <h4 class="author">Frederik Aust</h4>
-<h4 class="date">03 September, 2020</h4>
+<h4 class="date">14 April, 2021</h4>
 
 
 <div id="TOC">
@@ -462,7 +479,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </tbody>
 </table>
 </div>
-<p>The output also contains the <code>emmeans</code>-object on which these power calculations are based. By manipulating this object it is possible to tailor the power analyses to the contrasts desired for the planned study. That is, based on the dataset simulated with <code>ANOVA_exact()</code> we can write out the analysis code for <code>emmeans</code>-contrasts, just as we would if we were to analyse the empirical data, and use the output to perform the corresponding power analysis.</p>
+<p>The output also contains the <code>emmeans</code>-object on which these power calculations are based. By manipulating this object it is possible to tailor the power analyses to the contrasts desired for the planned study. That is, based on the dataset simulated with <code>ANOVA_exact()</code> we can write out the analysis code for <code>emmeans</code>-contrasts, just as we would if we were to analyze the empirical data, and use the output to perform the corresponding power analysis.</p>
 </div>
 <div id="customized-emmeans-contrasts" class="section level1">
 <h1>Customized <code>emmeans</code> contrasts</h1>
@@ -998,7 +1015,8 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div class="kable-table">
 <table>
 <colgroup>
-<col width="34%"></col>
+<col width="2%"></col>
+<col width="33%"></col>
 <col width="11%"></col>
 <col width="8%"></col>
 <col width="19%"></col>
@@ -1007,6 +1025,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </colgroup>
 <thead>
 <tr class="header">
+<th align="left"></th>
 <th align="left">contrast</th>
 <th align="left">voice</th>
 <th align="right">power</th>
@@ -1017,6 +1036,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">2</td>
 <td align="left">condition_cheerful - condition_sad</td>
 <td align="left">voice_human</td>
 <td align="right">30.99652</td>
@@ -1042,6 +1062,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <table>
 <thead>
 <tr class="header">
+<th align="left"></th>
 <th align="left">model term</th>
 <th align="left">condition</th>
 <th align="right">power</th>
@@ -1052,6 +1073,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">1</td>
 <td align="left">voice</td>
 <td align="left">condition_cheerful</td>
 <td align="right">21.80102</td>
@@ -1060,6 +1082,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <td align="right">3.167</td>
 </tr>
 <tr class="even">
+<td align="left">3</td>
 <td align="left">voice</td>
 <td align="left">condition_sad</td>
 <td align="right">10.39583</td>

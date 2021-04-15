@@ -7,17 +7,14 @@ res <- optimal_alpha(power_function = "power.t.test(delta = .5, sd = 1, n=64,
                      sig.level = x, type='two.sample', 
                      alternative='two.sided')$power")
 
-res$alpha
-res$beta
+print(res)
 
 ## ----fig.height=5, fig.width=6------------------------------------------------
 res2 <- optimal_alpha(power_function = "power.t.test(delta = .5, sd = 1, n=64, 
                       sig.level = x, type='two.sample', 
                       alternative='two.sided')$power", error = "balance")
 
-res2$alpha
-res2$beta
-
+print(res2)
 
 ## ----fig.height=5, fig.width=6------------------------------------------------
 res3 <- optimal_alpha(power_function = "power.t.test(delta = .5, sd = 1, n=100, 
@@ -25,9 +22,7 @@ res3 <- optimal_alpha(power_function = "power.t.test(delta = .5, sd = 1, n=100,
                       alternative='two.sided')$power",
                       error = "minimal", costT1T2 = 4)
 
-res3$alpha
-res3$beta
-
+print(res3)
 
 ## ----fig.height=5, fig.width=6------------------------------------------------
 res4 <- optimal_alpha(power_function = "power.t.test(delta = .5, sd = 1, n=100, 
@@ -35,8 +30,7 @@ res4 <- optimal_alpha(power_function = "power.t.test(delta = .5, sd = 1, n=100,
                       alternative='two.sided')$power", 
                       error = "minimal", priorH1H0 = 2)
 
-res4$alpha
-res4$beta
+print(res4)
 
 ## -----------------------------------------------------------------------------
 power.ftest(
@@ -77,8 +71,7 @@ res5 = optimal_alpha("power.ftest(num_df = exact2_res$anova_table$num_df[3],
             alpha_level = x)$power/100",
             error = "minimal")
 
-res5$alpha
-res5$beta
+print(res5)
 
 ## ----ANOVA_compromise---------------------------------------------------------
 comp_res = ANOVA_compromise(design_result,
