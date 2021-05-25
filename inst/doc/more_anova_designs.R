@@ -25,9 +25,6 @@ design_result <- ANOVA_design(design = design,
                    labelnames = labelnames,
                    plot = TRUE)
 
-ANOVA_exact2(design_result,
-            emm = TRUE) # Pairwise emmeans will automatically run
-
 ## -----------------------------------------------------------------------------
 library(pwr)
 pwr.t.test(d = 2.2/6.4,
@@ -49,8 +46,8 @@ pwr.t.test(d = 0.4/6.4,
            alternative="two.sided")$power
 
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
-plot_power(design_result, min_n = 10, max_n = 250)
+## ----eval=FALSE---------------------------------------------------------------
+#  plot_power(design_result, min_n = 10, max_n = 250)
 
 ## ---- fig.width=7, fig.height=4-----------------------------------------------
 design <- "3b"
@@ -354,8 +351,9 @@ power_res$power_B
 power_res$power_AB
 
 
-## ---- fig.width=7, fig.height=8-----------------------------------------------
-plot_power(design_result, min_n = 20, max_n = 100)
+## ---- eval=FALSE--------------------------------------------------------------
+#  # Not Run
+#  plot_power(design_result, min_n = 20, max_n = 100)
 
 ## ---- out.width = "600px", echo=FALSE-----------------------------------------
 knitr::include_graphics("screenshots/PS2000.gif")
@@ -385,6 +383,7 @@ power_result_vig_4 = ANOVA_power(design_result,
 
 knitr::kable(confint(power_result_vig_4, level = .98))
 
-## -----------------------------------------------------------------------------
-ANOVA_exact2(design_result = design_result)
+## ----eval=FALSE---------------------------------------------------------------
+#  # Not Run
+#  ANOVA_exact2(design_result = design_result)
 

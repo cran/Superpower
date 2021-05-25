@@ -1,6 +1,6 @@
 Package: Superpower
 Title: Simulation-Based Power Analysis for Factorial Designs
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(person(given = "Aaron",
            family = "Caldwell",
            role = c("aut", "cre"),
@@ -32,7 +32,7 @@ Imports: mvtnorm, MASS, afex, emmeans, ggplot2, gridExtra, reshape2,
 Suggests: knitr, rmarkdown, pwr, testthat, covr, jmvcore
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2021-04-14 21:11:31 UTC; arcal
+Packaged: 2021-05-25 00:05:24 UTC; aaroncaldwell
 Author: Aaron Caldwell [aut, cre],
   Daniel Lakens [aut],
   Lisa DeBruine [ctb],
@@ -40,4 +40,4 @@ Author: Aaron Caldwell [aut, cre],
   Frederik Aust [ctb] (<https://orcid.org/0000-0003-4900-788X>)
 Maintainer: Aaron Caldwell <arcaldwell49@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-04-15 08:40:06 UTC
+Date/Publication: 2021-05-25 04:10:02 UTC

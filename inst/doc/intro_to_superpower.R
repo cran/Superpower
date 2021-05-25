@@ -148,27 +148,7 @@ ANOVA_exact(design_result,
 ## ---- fig.width=7, fig.height=4-----------------------------------------------
 plot_power(design_result, min_n = 10, max_n = 250)
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
-design_result <- ANOVA_design(design = "2b",
-                   n = 180, 
-                   mu = c(24, 26), 
-                   sd = 6.4, 
-                   labelnames = c("condition", "control", "pet"),
-                   plot = FALSE)
-
-plot_power(design_result, max_n = 250)
-
-## ---- fig.width=7, fig.height=4-----------------------------------------------
-design_result <- ANOVA_design(design = "2b",
-                   n = 180, 
-                   mu = c(24, 26), 
-                   sd = 6.8, 
-                   labelnames = c("condition", "control", "pet"),
-                   plot = FALSE)
-
-plot_power(design_result, min_n = 10, max_n = 250)
-
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----morey1, fig.width=7, fig.height=4----------------------------------------
 morey_plot.ttest(
   es = seq(.1, .5, .01),
   n = c(10, 20),
@@ -177,7 +157,7 @@ morey_plot.ttest(
   alternative = "one.sided"
 )
 
-## ---- fig.width=7, fig.height=6-----------------------------------------------
+## ----morey2, fig.width=7, fig.height=6----------------------------------------
 morey_plot.ftest(
   es = seq(.1, .5, .01),
   num_df = c(1, 2),
