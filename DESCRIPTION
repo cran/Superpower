@@ -1,6 +1,6 @@
 Package: Superpower
 Title: Simulation-Based Power Analysis for Factorial Designs
-Version: 0.1.2
+Version: 0.2.0
 Authors@R: c(person(given = "Aaron",
            family = "Caldwell",
            role = c("aut", "cre"),
@@ -26,13 +26,14 @@ URL: https://aaroncaldwell.us/SuperpowerBook/
 BugReports: https://github.com/arcaldwell49/Superpower/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Imports: mvtnorm, MASS, afex, emmeans, ggplot2, gridExtra, reshape2,
-        stats, dplyr, magrittr, tidyselect, Hmisc, tidyr
-Suggests: knitr, rmarkdown, pwr, testthat, covr, jmvcore
+        stats, dplyr, magrittr, tidyselect, tidyr
+Suggests: knitr, rmarkdown, pwr, testthat, covr, jmvcore, spelling
 VignetteBuilder: knitr
+Language: en-US
 NeedsCompilation: no
-Packaged: 2021-05-25 00:05:24 UTC; aaroncaldwell
+Packaged: 2022-05-16 17:37:49 UTC; aaroncaldwell
 Author: Aaron Caldwell [aut, cre],
   Daniel Lakens [aut],
   Lisa DeBruine [ctb],
@@ -40,4 +41,4 @@ Author: Aaron Caldwell [aut, cre],
   Frederik Aust [ctb] (<https://orcid.org/0000-0003-4900-788X>)
 Maintainer: Aaron Caldwell <arcaldwell49@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-05-25 04:10:02 UTC
+Date/Publication: 2022-05-17 13:50:02 UTC

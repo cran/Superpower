@@ -51,7 +51,8 @@ design_result <- ANOVA_design(design = "2b*2w",
                    mu = c(1.03, 1.41, 0.98, 1.01), 
                    sd = 1.03, 
                    r = 0.8, 
-                   labelnames = c("voice", "human", "robot", "emotion", "cheerful", "sad"),
+                   label_list = list("voice"  = c("human", "robot"),
+                                     "emotion" = c( "cheerful", "sad")),
                    plot = TRUE)
 
 ## -----------------------------------------------------------------------------
@@ -69,13 +70,13 @@ design <- "2b"
 n <- 100
 mu <- c(24, 26.2)
 sd <- 6.4
-labelnames <- c("condition", "control", "pet") #
+label_list = list("condition" = c("control", "pet")) #
 
 design_result <- ANOVA_design(design = design,
                               n = n,
                               mu = mu, 
                               sd = sd, 
-                              labelnames = labelnames)
+                              label_list = label_list)
 
 ## -----------------------------------------------------------------------------
 power_result_vig_2 <- ANOVA_power(design_result, 
@@ -105,7 +106,7 @@ design_result <- ANOVA_design(design = "2b",
                    n = 100, 
                    mu = c(24, 26.2), 
                    sd = 6.4, 
-                   labelnames = c("condition", "control", "pet"),
+                   label_list = list("condition" = c("control", "pet")),
                    plot = TRUE)
 
 ANOVA_exact(design_result,
@@ -116,7 +117,7 @@ design_result <- ANOVA_design(design = "2b",
                    n = 150, 
                    mu = c(24, 26.2), 
                    sd = 6.4, 
-                   labelnames = c("condition", "control", "pet"),
+                   label_list = list("condition" = c("control", "pet")),
                    plot = FALSE)
 
 ANOVA_exact(design_result,
@@ -127,7 +128,7 @@ design_result <- ANOVA_design(design = "2b",
                    n = 175, 
                    mu = c(24, 26.2), 
                    sd = 6.4, 
-                   labelnames = c("condition", "control", "pet"),
+                   label_list = list("condition" = c("control", "pet")),
                    plot = FALSE)
 
 ANOVA_exact(design_result,
@@ -138,7 +139,7 @@ design_result <- ANOVA_design(design = "2b",
                    n = 180, 
                    mu = c(24, 26.2), 
                    sd = 6.4, 
-                   labelnames = c("condition", "control", "pet"),
+                   label_list = list("condition" = c("control", "pet")),
                    plot = FALSE)
 
 ANOVA_exact(design_result,
