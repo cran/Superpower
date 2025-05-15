@@ -11,7 +11,7 @@ Superpower_options(verbose = FALSE,
                    plot = FALSE)
 nsims = 250
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 design <- "3b"
 n <- 50
 mu <- c(24, 26.2, 26.6)
@@ -49,7 +49,7 @@ pwr.t.test(d = 0.4/6.4,
 ## ----eval=FALSE---------------------------------------------------------------
 #  plot_power(design_result, min_n = 10, max_n = 250)
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 design <- "3b"
 n <- 134
 mu <- c(24, 26.2, 26.6)
@@ -89,19 +89,19 @@ ANOVA_exact2(design_result,
              emm = TRUE)
 
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("screenshots/gpower_9.png")
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("screenshots/gpower_1.png")
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("screenshots/gpower_11.png")
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("screenshots/gpower_10.png")
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 K <- 2
 n <- 34
 sd <- 1
@@ -126,7 +126,7 @@ design_result <- ANOVA_design(design = design,
 ANOVA_exact2(design_result,
             emm = TRUE)
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 K <- 2
 n <- 34
 sd <- 1
@@ -163,7 +163,7 @@ r <- 0.7
 (4.3-4.2)/0.9/sqrt(2*(1-r))
 
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 K <- 3
 n <- 20
 sd <- 1
@@ -193,16 +193,16 @@ confint(power_result,
         level = .98)
 
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("screenshots/gpower_12.png")
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("screenshots/gpower_14.png")
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("screenshots/gpower_5.png")
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 mu <- c(-0.25, 0.25, 0.25, -0.25)
 n <- 23
 sd <- 1
@@ -219,10 +219,10 @@ ANOVA_exact2(design_result,
              emm = TRUE)
 
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("screenshots/gpower_6.png")
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 mu <- c(-0.25, 0.25, 0.25, -0.25)
 n <- 23
 sd <- 1
@@ -320,20 +320,20 @@ design_result <- ANOVA_design(design = "2b*2b*2b",
                               label_list = list(
                                 "condition" = c("cheerful", "sad"),
                                 "voice" = c("human", "robot"),
-                                "factor_c" = c("c1", "c2")
+                                "factorC" = c("c1", "c2")
                               ))
 power_threeway_between(design_result)$power_ABC
 power_threeway_between(design_result)$Cohen_f_ABC
 
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 design <- "3b*3b"
 n <- 20
 mu <- c(20, 20, 20, 20, 20, 20, 20, 20, 25) 
 # Enter means in the order that matches the labels below.
 sd <- 5
-label_list <- list("Factor_A" = c("a1", "a2", "a3"), 
-                "Factor_B" = c("b1", "b2", "b3")) #
+label_list <- list("FactorA" = c("a1", "a2", "a3"), 
+                "FactorB" = c("b1", "b2", "b3")) #
 # the label names should be in the order of the means specified above.
 
 design_result <- ANOVA_design(design = design,
@@ -358,14 +358,14 @@ power_res$power_B
 power_res$power_AB
 
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  # Not Run
 #  plot_power(design_result, min_n = 20, max_n = 100)
 
-## ---- out.width = "600px", echo=FALSE-----------------------------------------
+## ----out.width = "600px", echo=FALSE------------------------------------------
 knitr::include_graphics("screenshots/PS2000.gif")
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 mu = c(2,1,4,2) 
 n <- 20
 sd <- 5

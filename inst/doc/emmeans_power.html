@@ -30,27 +30,27 @@ document.addEventListener('DOMContentLoaded', function(e) {
 </script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
 
 <style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -61,58 +61,57 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -121,13 +120,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -334,26 +340,28 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <h1 class="title toc-ignore">Power calculations for <code>emmeans</code>
 analyses</h1>
 <h4 class="author">Frederik Aust</h4>
-<h4 class="date">16 May, 2022</h4>
+<h4 class="date">14 May, 2025</h4>
 
 
 <div id="TOC">
 <ul>
-<li><a href="#a-note-of-caution">A note of caution</a></li>
-<li><a href="#post-hoc-pairwise-comparisons">Post hoc pairwise
+<li><a href="#a-note-of-caution" id="toc-a-note-of-caution">A note of
+caution</a></li>
+<li><a href="#post-hoc-pairwise-comparisons" id="toc-post-hoc-pairwise-comparisons">Post hoc pairwise
 comparisons</a></li>
-<li><a href="#customized-emmeans-contrasts">Customized
-<code>emmeans</code> contrasts</a>
+<li><a href="#customized-emmeans-contrasts" id="toc-customized-emmeans-contrasts">Customized <code>emmeans</code>
+contrasts</a>
 <ul>
-<li><a href="#equivalence-and-non-superiority-inferiority-tests">Equivalence
+<li><a href="#equivalence-and-non-superiority-inferiority-tests" id="toc-equivalence-and-non-superiority-inferiority-tests">Equivalence
 and non-superiority/-inferiority tests</a></li>
-<li><a href="#joint-tests">Joint tests</a></li>
+<li><a href="#joint-tests" id="toc-joint-tests">Joint tests</a></li>
 </ul></li>
 </ul>
 </div>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;Superpower&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;emmeans&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;Superpower&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;emmeans&quot;</span>)</span></code></pre></div>
+<pre><code>#&gt; Warning: package &#39;emmeans&#39; was built under R version 4.4.3</code></pre>
 <p>When conducting exact ANOVA power analyses with
 <code>Superpower</code> it is possible to calculate the power for both
 the omnibus <span class="math inline">\(F\)</span>-tests and planned
@@ -381,27 +389,27 @@ adjusting <code>alpha_level</code>.</p>
 pairwise comparisons of expected marginal means are added by setting
 <code>emm = TRUE</code> and <code>contrast_type = &quot;pairwise&quot;</code>
 (default).</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up a within design with 2 factors, each with 2 and 3 levels</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>design_result <span class="ot">&lt;-</span> <span class="fu">ANOVA_design</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">design =</span> <span class="st">&quot;2w*3w&quot;</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">40</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="dv">2</span>,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">r =</span> <span class="fl">0.8</span>, </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">label_list =</span> <span class="fu">list</span>(<span class="st">&quot;condition&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;cheerful&quot;</span>, <span class="st">&quot;sad&quot;</span>),  </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;voice&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;human&quot;</span>, <span class="st">&quot;robot&quot;</span>, <span class="st">&quot;cartoon&quot;</span>))</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<p><img src="data:image/png;base64,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" /><!-- --></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>exact_result <span class="ot">&lt;-</span> <span class="fu">ANOVA_exact</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  design_result,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">alpha_level =</span> <span class="fl">0.05</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">emm =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">contrast_type =</span> <span class="st">&quot;pairwise&quot;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># Set up a within design with 2 factors, each with 2 and 3 levels</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>design_result <span class="ot">&lt;-</span> <span class="fu">ANOVA_design</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  <span class="at">design =</span> <span class="st">&quot;2w*3w&quot;</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">40</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="dv">0</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="at">sd =</span> <span class="dv">2</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="at">r =</span> <span class="fl">0.8</span>, </span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  <span class="at">label_list =</span> <span class="fu">list</span>(<span class="st">&quot;condition&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;cheerful&quot;</span>, <span class="st">&quot;sad&quot;</span>),  </span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>                    <span class="st">&quot;voice&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;human&quot;</span>, <span class="st">&quot;robot&quot;</span>, <span class="st">&quot;cartoon&quot;</span>))</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>exact_result <span class="ot">&lt;-</span> <span class="fu">ANOVA_exact</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  design_result,</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="at">alpha_level =</span> <span class="fl">0.05</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  <span class="at">emm =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>  <span class="at">contrast_type =</span> <span class="st">&quot;pairwise&quot;</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>)</span></code></pre></div>
 <p>The result contains the power calculations for both the omnibus <span class="math inline">\(F\)</span>-tests and pairwise post-hoc
 comparisons.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>exact_result<span class="sc">$</span>main_results</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>exact_result<span class="sc">$</span>main_results</span></code></pre></div>
 <div class="kable-table">
 <table style="width:100%;">
 <colgroup>
@@ -445,7 +453,7 @@ comparisons.</p>
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(exact_result<span class="sc">$</span>emm_results)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">head</span>(exact_result<span class="sc">$</span>emm_results)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <colgroup>
@@ -529,7 +537,7 @@ power analysis.</p>
 <h1>Customized <code>emmeans</code> contrasts</h1>
 <p>The <code>emmeans</code> reference grid and contrasts are included in
 the output of <code>ANOVA_exact()</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>emmeans)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>emmeans)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="26%" />
@@ -608,7 +616,7 @@ the output of <code>ANOVA_exact()</code>.</p>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>contrasts)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>contrasts)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="66%" />
@@ -769,7 +777,7 @@ voice_robot</td>
 <p>By using <code>emmeans_power()</code> on the contrasts, we can
 reproduce the results of the previous power analysis for the pairwise
 comparisons.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">emmeans_power</span>(exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>contrasts))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">emmeans_power</span>(exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>contrasts))</span></code></pre></div>
 <div class="kable-table">
 <table>
 <colgroup>
@@ -844,12 +852,12 @@ voice_human</td>
 perform additional power analyses. In the following example, we
 calculate the power for the contrasts between sad and cheerful condition
 for each voice.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>simple_condition_effects <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>emmeans,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">specs =</span> <span class="sc">~</span> condition <span class="sc">|</span> voice</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans_power</span>(<span class="fu">pairs</span>(simple_condition_effects))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>simple_condition_effects <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>emmeans,</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="at">specs =</span> <span class="sc">~</span> condition <span class="sc">|</span> voice</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>)</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="fu">emmeans_power</span>(<span class="fu">pairs</span>(simple_condition_effects))</span></code></pre></div>
 <div class="kable-table">
 <table>
 <colgroup>
@@ -900,7 +908,7 @@ for each voice.</p>
 </div>
 <p>We may also calculate the power for testing all condition means
 against an arbitrary constant.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans_power</span>(<span class="fu">test</span>(simple_condition_effects, <span class="at">null =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">emmeans_power</span>(<span class="fu">test</span>(simple_condition_effects, <span class="at">null =</span> <span class="fl">0.5</span>))</span></code></pre></div>
 <div class="kable-table">
 <table>
 <colgroup>
@@ -975,12 +983,12 @@ against an arbitrary constant.</p>
 </div>
 <p>Finally, we can calculate the power for custom contrasts between any
 linear combination of conditions.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>custom_contrast <span class="ot">&lt;-</span> <span class="fu">contrast</span>(</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>emmeans,</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">robot_vs_sad_human =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="fl">0.5</span>, <span class="sc">-</span><span class="fl">0.5</span>))</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans_power</span>(custom_contrast)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>custom_contrast <span class="ot">&lt;-</span> <span class="fu">contrast</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>emmeans,</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">robot_vs_sad_human =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="fl">0.5</span>, <span class="sc">-</span><span class="fl">0.5</span>))</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>)</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="fu">emmeans_power</span>(custom_contrast)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <colgroup>
@@ -1013,12 +1021,12 @@ linear combination of conditions.</p>
 <p>Although <code>emmeans_power()</code> currently ignores adjustments
 for multiple comparisons, it is possible to calculate the power for
 Bonferroni-corrected tests by adjusting <code>alpha_level</code>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>n_contrasts <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">as.data.frame</span>(simple_condition_effects))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans_power</span>(</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pairs</span>(simple_condition_effects),</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alpha_level =</span> <span class="fl">0.05</span> <span class="sc">/</span> n_contrasts</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>n_contrasts <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">as.data.frame</span>(simple_condition_effects))</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">emmeans_power</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>  <span class="fu">pairs</span>(simple_condition_effects),</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>  <span class="at">alpha_level =</span> <span class="fl">0.05</span> <span class="sc">/</span> n_contrasts</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <colgroup>
@@ -1069,10 +1077,10 @@ Bonferroni-corrected tests by adjusting <code>alpha_level</code>.</p>
 </div>
 <p>Similarly, if we want to calculate power for a one-sided test, we can
 doubling <code>alpha_level</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans_power</span>(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pairs</span>(simple_condition_effects)[<span class="dv">1</span>],</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">alpha_level =</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fl">0.05</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">emmeans_power</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">pairs</span>(simple_condition_effects)[<span class="dv">1</span>],</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="at">alpha_level =</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fl">0.05</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <colgroup>
@@ -1114,9 +1122,9 @@ with the tested directional hypothesis.</p>
 <p>Because <code>emmeans</code> can perform equivalence,
 non-superiority, and -inferiority tests, <code>emmeans_power()</code>
 can calculate the corresponding power for these tests.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans_power</span>(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pairs</span>(simple_condition_effects, <span class="at">side =</span> <span class="st">&quot;equivalence&quot;</span>, <span class="at">delta =</span> <span class="fl">0.3</span>)[<span class="dv">2</span>]</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">emmeans_power</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">pairs</span>(simple_condition_effects, <span class="at">side =</span> <span class="st">&quot;equivalence&quot;</span>, <span class="at">delta =</span> <span class="fl">0.3</span>)[<span class="dv">2</span>]</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <colgroup>
@@ -1164,12 +1172,12 @@ consistent with the tested directional hypothesis (smaller than
 joint tests. Lets assume we plan to test the main effect of voice for
 each of the two conditions separately using <code>joint_tests()</code>.
 We can then calculate the power for each Bonferroni-corrected <span class="math inline">\(F\)</span>-test as follows.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>voice_by_condition <span class="ot">&lt;-</span> <span class="fu">joint_tests</span>(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>emmeans,</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="st">&quot;condition&quot;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">emmeans_power</span>(voice_by_condition, <span class="at">alpha_level =</span> <span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>voice_by_condition <span class="ot">&lt;-</span> <span class="fu">joint_tests</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  exact_result<span class="sc">$</span>emmeans<span class="sc">$</span>emmeans,</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="at">by =</span> <span class="st">&quot;condition&quot;</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>)</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="fu">emmeans_power</span>(voice_by_condition, <span class="at">alpha_level =</span> <span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">2</span>)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <colgroup>

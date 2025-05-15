@@ -11,7 +11,7 @@ Superpower_options("verbose")
 Superpower_options("verbose" = FALSE) 
 Superpower_options("verbose")
 
-## ---- fig.width=7, fig.height=4, echo=FALSE, message=FALSE, warning=FALSE-----
+## ----fig.width=7, fig.height=4, echo=FALSE, message=FALSE, warning=FALSE------
 design_result <- ANOVA_design(design = "2b*2w*2b",
                               n = 10, 
                               mu = c(1, 2, 3, 4, 5, 6, 7, 8), 
@@ -30,7 +30,7 @@ plot(design_result)
 ## -----------------------------------------------------------------------------
 (((2*2*4)^2)-(2*2*4))/2
 
-## ---- fig.width=5, fig.height=4-----------------------------------------------
+## ----fig.width=5, fig.height=4------------------------------------------------
 design_result <- ANOVA_design(design = "2w*2w",
                               n = 80,
                               mu = c(1.1, 1.2, 1.3, 1.4),
@@ -45,7 +45,7 @@ plot(design_result)
 ## -----------------------------------------------------------------------------
 design_result$cor_mat
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 design_result <- ANOVA_design(design = "2b*2w",
                    n = 40, 
                    mu = c(1.03, 1.41, 0.98, 1.01), 
@@ -65,7 +65,7 @@ power_result_vig_1 <- ANOVA_power(design_result,
 ## -----------------------------------------------------------------------------
 knitr::kable(confint(power_result_vig_1, level = .98))
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 design <- "2b"
 n <- 100
 mu <- c(24, 26.2)
@@ -101,7 +101,7 @@ pwr.anova.test(n = 100,
                f = 0.171875,
                sig.level = 0.05)$power
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 design_result <- ANOVA_design(design = "2b",
                    n = 100, 
                    mu = c(24, 26.2), 
@@ -146,7 +146,7 @@ ANOVA_exact(design_result,
             verbose = FALSE)$main_results$power
 
 
-## ---- fig.width=7, fig.height=4-----------------------------------------------
+## ----fig.width=7, fig.height=4------------------------------------------------
 plot_power(design_result, min_n = 10, max_n = 250)
 
 ## ----morey1, fig.width=7, fig.height=4----------------------------------------

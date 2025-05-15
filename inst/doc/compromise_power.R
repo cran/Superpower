@@ -42,7 +42,7 @@ power.ftest(
   liberal_lambda = FALSE
 )
 
-## ---- fig.width=5, fig.height=4-----------------------------------------------
+## ----fig.width=5, fig.height=4------------------------------------------------
 design_result <- ANOVA_design(design = "2b*2w",
                    n = 40, 
                    mu = c(1.03, 1.41, 0.98, 1.01), 
